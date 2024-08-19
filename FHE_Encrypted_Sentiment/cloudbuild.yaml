@@ -1,0 +1,12 @@
+steps:
+# Step to build the Docker image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/fhe-encrypted-sentiment', '.']
+  dir: 'FullyHomomorphicEncryption_LLM/FHE_Encrypted_Sentiment'
+
+# Step to push the Docker image to Google Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/fhe-encrypted-sentiment']
+
+images:
+- 'gcr.io/$PROJECT_ID/fhe-encrypted-sentiment'
