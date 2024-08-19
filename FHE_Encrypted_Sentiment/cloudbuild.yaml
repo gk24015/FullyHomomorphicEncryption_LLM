@@ -10,3 +10,5 @@ steps:
 
 images:
 - 'gcr.io/$PROJECT_ID/fhe-encrypted-sentiment'
+logging:
+  cloud_logging_option: true
